@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <img src="./img/sunset.png" alt="">
+            <h1>Weather Web App</h1>
+        </div>
+        <div class="main">
+            <div class="temp-info">
+                <p class="weather-temp"><span id="api_temp">29</span>°C</p>
+            </div>
+            <div class="place-info">
+                <div class="weather-info">
+                    <p id="weather-main">Clear Sky</p>
+                </div>
+                <p id="api_place">Kathmandu</p>
+            </div>
+        </div>
+        <div class="search">
+            <input type="text" id="search_place" placeholder="Enter your city name...">
+            <button type="submit" id="submit" onclick="">Submit</button>
+        </div>
+        <p id="api_error"></p>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
