@@ -10,4 +10,7 @@ https://nizzal.github.io/weather-web-app/
 
 # To Do:
 * Add a dark mode toggle button
-* Display weather icon according to current weather
+
+# Changes till now:
+* Display weather according to current weather
+* Input Validation/Display error message
