@@ -15,7 +15,12 @@
         </div>
         <div class="main">
             <div class="temp-info">
-                <p class="weather-temp"><span id="api_temp">29</span>°C</p>
+                <div class="info-1">
+                    <img src="./img/sunset.png" id="main-icon" alt="">
+                </div>
+                <div class="info-2">
+                    <p class="weather-temp"><span id="api_temp">29</span>°C</p>
+                </div>
             </div>
             <div class="place-info">
                 <div class="weather-info">
@@ -24,11 +29,13 @@
                 <p id="api_place">Kathmandu</p>
             </div>
         </div>
-        <div class="search">
-            <input type="text" id="search_place" placeholder="Enter your city name...">
-            <button type="submit" id="submit" onclick="">Submit</button>
+        <div class="search-box">
+            <form class="search" id="main-form">
+                <input type="text" id="search_place" placeholder="Enter your city name...">
+                <button type="submit" id="submit" onclick="">Submit</button>
+            </form>
+            <p id="error-mssg"></p>
         </div>
-        <p id="api_error"></p>
     </div>
     <script src="./app.js"></script>
 </body>

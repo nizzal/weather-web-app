@@ -1,14 +1,25 @@
 var inputValue = document.querySelector('#search_place');
+var form = document.getElementById('main-form');
 
-document.getElementById('submit').addEventListener('click', doSubmit);
+form.addEventListener('submit', doSubmit);
 
-function doSubmit(){
+function doSubmit(e){
+    e.preventDefault();
+
     fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&units=metric&appid=5c736e1c517fefd7f4d5222fa9808a5e')
     .then((res) => {
         if (!res.ok) {
-            throw new Error('The provided place wasnot found. Try something else.');
+            err1 = new Error('The provided place wasnot found, try something else.');
+            document.getElementById('error-mssg').textContent = err1;
+            document.getElementById('error-mssg').style.display = "block";
         }
-        return res.json();
+        else {
+            if (err1 === "" || err1 == null) {
+                return res.json();
+            } else {
+                document.getElementById('error-mssg').style.display = "none";
+            }
+        }
     })
     .then((data) => {
         var cityName = data['name'];
@@ -22,10 +33,13 @@ function doSubmit(){
         document.getElementById('api_place').innerHTML = cityName;
         document.getElementById('api_temp').innerHTML = Math.round(tempValue);
         document.getElementById('weather-main').innerHTML = weatherRes(weatherDetail);
-    
-    })
-    .catch((err) => {
-        document.getElementById('api_error').innerHTML = err;
-    })
 
+        // Icon Image Display
+        var iconcode = data.weather[0].icon;
+        var iconurl = "http://openweathermap.org/img/w/" + iconcode +".png";
+        document.getElementById('main-icon').setAttribute("src", iconurl)
+    })
+    // .catch((err) => {
+    //     document.getElementById('error-mssg').textContent = err;
+    // })
 }
