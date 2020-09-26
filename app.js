@@ -1,4 +1,4 @@
-var inputValue = document.querySelector('#search_place');
+var inputValue = document.getElementById('search_place');
 var form = document.getElementById('main-form');
 
 form.addEventListener('submit', doSubmit);
@@ -19,6 +19,7 @@ function doSubmit(e){
             } else {
                 document.getElementById('error-mssg').style.display = "none";
             }
+        return res.json();
         }
     })
     .then((data) => {
@@ -30,16 +31,14 @@ function doSubmit(e){
             return weatherDetail.charAt(0).toUpperCase()+weatherDetail.slice(1);
         }
 
-        document.getElementById('api_place').innerHTML = cityName;
-        document.getElementById('api_temp').innerHTML = Math.round(tempValue);
-        document.getElementById('weather-main').innerHTML = weatherRes(weatherDetail);
-
         // Icon Image Display
         var iconcode = data.weather[0].icon;
         var iconurl = "http://openweathermap.org/img/w/" + iconcode +".png";
         document.getElementById('main-icon').setAttribute("src", iconurl)
+
+        document.getElementById('api_place').innerHTML = cityName;
+        document.getElementById('api_temp').innerHTML = Math.round(tempValue);
+        document.getElementById('weather-main').innerHTML = weatherRes(weatherDetail);
+
     })
-    // .catch((err) => {
-    //     document.getElementById('error-mssg').textContent = err;
-    // })
 }
