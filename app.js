@@ -5,11 +5,11 @@ form.addEventListener('submit', doSubmit);
 
 function doSubmit(e){
     e.preventDefault();
+    err1 = new Error('The provided place wasnot found, try something else.');
 
     fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&units=metric&appid=5c736e1c517fefd7f4d5222fa9808a5e')
     .then((res) => {
         if (!res.ok) {
-            err1 = new Error('The provided place wasnot found, try something else.');
             document.getElementById('error-mssg').textContent = err1;
             document.getElementById('error-mssg').style.display = "block";
         }
