@@ -36,9 +36,9 @@ function doSubmit(e){
         var iconurl = "http://openweathermap.org/img/w/" + iconcode +".png";
         document.getElementById('main-icon').setAttribute("src", iconurl)
 
-        document.getElementById('api_place').innerHTML = cityName;
-        document.getElementById('api_temp').innerHTML = Math.round(tempValue);
-        document.getElementById('weather-main').innerHTML = weatherRes(weatherDetail);
+        document.getElementById('api_place').innerText = cityName;
+        document.getElementById('api_temp').innerText = Math.round(tempValue);
+        document.getElementById('weather-main').innerText = weatherRes(weatherDetail);
 
     })
 }
