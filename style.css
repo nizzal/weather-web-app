@@ -154,20 +154,44 @@
 
   .place-info > p {
     margin: 10px auto;
+    font-size: 16px;
   }
 
+  .main {
+    height: 50vh;
+  }
   .search {
     flex-direction: column;
+    overflow: hidden;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  #submit {
+  .search #search_place {
+    min-height: 30px;
+    width: 80%;
+  }
+
+  .search #submit {
     margin: 10px auto;
     min-height: 10px;
+    font-size: 16px;
+    padding: 5px;
   }
   .title {
     flex-direction: column;
   }
+
   input::-webkit-input-placeholder {
+    font-size: 16px;
+  }
+  .temp-info p {
+    font-size: 1.8rem;
+  }
+  .place-info #api_place {
     font-size: 16px;
   }
 }

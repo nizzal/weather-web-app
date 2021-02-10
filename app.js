@@ -38,9 +38,8 @@ function doSubmit(e) {
             document.getElementById('main-icon').style.height = "250px";
 
 
-            document.getElementById('api_place').innerText = cityName;
+            document.getElementById('api_place').innerText = cityName + "," + cnValue;
             document.getElementById('api_temp').innerText = Math.round(tempValue);
             document.getElementById('weather-main').innerText = weatherRes(weatherDetail);
-
         })
 }
