@@ -1,0 +1,30 @@
+{
+  "name": "weather-web-app",
+  "version": "1.0.0",
+  "description": "Simple Weather Web App with implementation of OpenWeather API.\r https://nizzal.github.io/weather-web-app/",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nizzal/weather-web-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nizzal/weather-web-app/issues"
+  },
+  "homepage": "https://github.com/nizzal/weather-web-app#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
+}
